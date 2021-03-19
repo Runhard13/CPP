@@ -7,11 +7,10 @@ void	Zombie::announce() const
 
 Zombie::Zombie (std::string Name, std::string Type)
 {
-	this->_name = Name;
-	this->_type = Type;
+	_name = Name;
+	_type = Type;
 
 }
-
 Zombie::Zombie()
 {
 	std::string randomNames[8] = { "Semen", "Ilgiz", "Tanya", "Arina", "Ivan", "Aigul", "Nikolay", "Zubaida"};
@@ -24,5 +23,5 @@ Zombie::Zombie()
 
 Zombie::~Zombie()
 {
-	std::cout << "Zombie " << this->_name << " deleted\n" << std::endl;
+	std::cout << "Zombie " << _name << " deleted" << std::endl;
 }

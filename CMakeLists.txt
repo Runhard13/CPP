@@ -25,3 +25,18 @@ add_executable(zombie
 		cpp01/ex02/Zombie.hpp
 		cpp01/ex02/ZombieEvent.cpp
 		cpp01/ex02/ZombieEvent.hpp)
+
+add_executable(zombieHorde
+		cpp01/ex03/main.cpp
+		cpp01/ex03/Zombie.cpp
+		cpp01/ex03/Zombie.hpp
+		cpp01/ex03/ZombieHorde.cpp
+		cpp01/ex03/ZombieHorde.hpp)
+add_executable(brain
+		cpp01/ex04/ex04.cpp)
+add_executable(human
+		cpp01/ex05/Brain.cpp
+		cpp01/ex05/Brain.hpp
+		cpp01/ex05/Human.cpp
+		cpp01/ex05/Human.hpp
+		cpp01/ex05/main.cpp)
