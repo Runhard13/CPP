@@ -1,18 +1,18 @@
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-#ifndef CPP_ZOMBIE_HPP
-#define CPP_ZOMBIE_HPP
-
-#include <iostream>
+# include <iostream>
 
 class Zombie
 {
 public:
-    void announce()
-private:
-    std::string _name;
-    std::string _type;
+	Zombie(std::string Name, std::string Type);
+	void	announce() const;
+	~Zombie();
 
+private:
+	std::string	_name;
+	std::string	_type;
 };
 
-
-#endif //CPP_ZOMBIE_HPP
+#endif
