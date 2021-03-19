@@ -1,4 +1,4 @@
-NAME	= human
+NAME	= violence
 
 CC		= clang++
 
@@ -6,7 +6,7 @@ CFLAGS	= -Wall -Wextra -Werror
 
 OBJS	= $(SRCS:%.cpp=%.o)
 
-SRCS	= main.cpp HumanA.cpp HumanB.cpp Weapon.hpp
+SRCS	= main.cpp HumanA.cpp HumanB.cpp Weapon.сpp
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
