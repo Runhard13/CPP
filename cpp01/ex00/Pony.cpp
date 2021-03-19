@@ -2,20 +2,20 @@
 
 Pony::Pony(const std::string& a, const std::string& b, const std::string& c)
 {
-    this->_name = a;
-    this->_color = b;
-    this->_mood = c;
-    std::cout << this->_name << ", a little " << this->_color << " pony in " << this->_mood << " mood" << std::endl;
+    _name = a;
+    _color = b;
+    _mood = c;
+    std::cout << _name << ", a little " << _color << " pony in " << _mood << " mood" << std::endl;
 }
 
 Pony::~Pony()
 {
-    std::cout << this->_name << " leaving us alone" << std::endl;
+    std::cout << _name << " leaving us alone" << std::endl;
 }
 
 void Pony::pet()
 {
-    if (this->_mood == "angry")
+    if (_mood == "angry")
         std::cout << "It's better do not pet this angry pony!" << std::endl;
     else
         std::cout << "You pet the pony :)" << std::endl;

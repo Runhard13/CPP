@@ -11,7 +11,7 @@ private:
 	const Brain brain;
 public:
 	Human();
-	std::string identify() const;
+	std::string identify();
 	const Brain &getBrain();
 };
 

@@ -6,7 +6,7 @@ CFLAGS	= -Wall -Wextra -Werror
 
 OBJS	= $(SRCS:%.cpp=%.o)
 
-SRCS	= main.cpp HumanA.cpp HumanB.cpp Weapon.сpp
+SRCS	= main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)

@@ -9,7 +9,7 @@ ZombieHorde::ZombieHorde(int n)
 ZombieHorde::~ZombieHorde()
 {
 	delete [] _zombies;
-	std::cout << "Zombies was deleted" << std::endl;
+	std::cout << "All zombies was deleted" << std::endl;
 }
 
 void ZombieHorde::announce()

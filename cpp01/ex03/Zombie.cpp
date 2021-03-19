@@ -5,7 +5,7 @@ void	Zombie::announce() const
 	std::cout << "<" << _name << " (" << _type << ")> Braiiiiiiinnnssss..." << std::endl;
 }
 
-Zombie::Zombie (std::string Name, std::string Type)
+Zombie::Zombie (const std::string& Name, const std::string& Type)
 {
 	_name = Name;
 	_type = Type;

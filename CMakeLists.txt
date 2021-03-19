@@ -52,3 +52,5 @@ add_executable(weapon
 		cpp01/ex06/HumanB.hpp
 		cpp01/ex06/Weapon.hpp
 		cpp01/ex06/main.cpp)
+add_executable(replace
+		cpp01/ex07/main.cpp)

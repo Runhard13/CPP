@@ -14,7 +14,6 @@ private:
     std::string _name;
     std::string _color;
     std::string _mood;
-
 };
 
 #endif //CPP_PONY_HPP

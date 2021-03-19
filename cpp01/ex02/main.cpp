@@ -6,7 +6,6 @@ int	main()
 	Zombie		*zombie;
 
 	apocalypse.setZombieType("Vegan");
-
 	zombie = apocalypse.newZombie("Anya");
 	zombie->announce();
 	delete zombie;
