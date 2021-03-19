@@ -1,11 +1,15 @@
 cmake_minimum_required(VERSION 3.17)
 project(CPP)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 98)
 
 include_directories(cpp00/ex01)
 include_directories(cpp01/ex00)
 include_directories(cpp01/ex02)
+include_directories(cpp00/ex03)
+include_directories(cpp01/ex04)
+include_directories(cpp01/ex05)
+include_directories(cpp00/ex06)
 
 add_executable(megaphone
 		cpp00/ex00/megaphone.cpp)
@@ -40,3 +44,11 @@ add_executable(human
 		cpp01/ex05/Human.cpp
 		cpp01/ex05/Human.hpp
 		cpp01/ex05/main.cpp)
+add_executable(weapon
+		cpp01/ex06/HumanA.cpp
+		cpp01/ex06/HumanB.cpp
+		cpp01/ex06/Weapon.cpp
+		cpp01/ex06/HumanA.hpp
+		cpp01/ex06/HumanB.hpp
+		cpp01/ex06/Weapon.hpp
+		cpp01/ex06/main.cpp)
