@@ -54,3 +54,11 @@ add_executable(weapon
 		cpp01/ex06/main.cpp)
 add_executable(replace
 		cpp01/ex07/main.cpp)
+add_executable(fixed
+		cpp02/ex00/Fixed.cpp
+		cpp02/ex00/Fixed.hpp
+		cpp02/ex00/main.cpp)
+add_executable(fixed2
+		cpp02/ex01/Fixed.cpp
+		cpp02/ex01/Fixed.hpp
+		cpp02/ex01/main.cpp)
