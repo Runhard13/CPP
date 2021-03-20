@@ -62,3 +62,7 @@ add_executable(fixed2
 		cpp02/ex01/Fixed.cpp
 		cpp02/ex01/Fixed.hpp
 		cpp02/ex01/main.cpp)
+add_executable(frag
+		cpp03/ex00/FragTrap.cpp
+		cpp03/ex00/FragTrap.hpp
+		cpp03/ex00/main.cpp)
