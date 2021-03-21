@@ -1,29 +1,43 @@
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main ()
 {
 	FragTrap one = FragTrap("Bender");
 	FragTrap two = FragTrap();
+	ScavTrap three = ScavTrap();
 
 	std::cout << "__________________Attacks testing__________________" << std::endl;
 
 	std::cout << "*** Standard ***" << std::endl;
 	one.meleeAttack("target dummy");
 	one.rangedAttack("flying robot");
+	three.rangedAttack("Sveta");
+	three.meleeAttack("Sweta");
+	std::cout << std::endl;
+
 	std::cout << "*** VaultHunter ***" << std::endl;
 	two.vaulthunter_dot_exe(" big boss");
 	two.vaulthunter_dot_exe(" big boss");
 	two.vaulthunter_dot_exe(" big boss");
 	two.vaulthunter_dot_exe(" big boss");
 	two.vaulthunter_dot_exe(" big boss");
-	std::cout << "__________________Healing & Taking damage__________________" << std::endl;
+	std::cout << std::endl;
 
+	std::cout << "*** Challenges ***" << std::endl;
+	three.challengeNewcomer();
+	three.challengeNewcomer();
+	three.challengeNewcomer();
+	std::cout << std::endl;
+
+	std::cout << "__________________Healing & Taking damage__________________" << std::endl;
 	one.takeDamage(25);
-	one.takeDamage(10);
 	one.takeDamage(25);
-	one.beRepaired(20);
+	three.takeDamage(10);
+	three.beRepaired(20);
 	one.beRepaired(200);
 	one.takeDamage(1304);
+	std::cout << std::endl;
 
 	std::cout << "__________________Exiting main, destructing all robots :)__________________" << std::endl;
 	return 0;

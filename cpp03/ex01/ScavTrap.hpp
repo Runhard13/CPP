@@ -5,10 +5,9 @@
 **		Includes
 **==========================
 */
-
 #include <iostream>
 
-class FragTrap
+class ScavTrap
 {
 	private:
 	int _hitPoints;
@@ -20,19 +19,19 @@ class FragTrap
 	int _meleeDamage;
 	int _rangedDamage;
 	int _armor;
+
 	public:
-		FragTrap();
-		FragTrap(const std:: string& n);
-		FragTrap(FragTrap const &other);
-		~FragTrap();
+		ScavTrap();
+		ScavTrap (const std::string& n);
+		ScavTrap(ScavTrap const &other);
+		~ScavTrap();
 
 		void rangedAttack (std::string const & target);
 		void meleeAttack (std::string const & target);
 		void takeDamage (unsigned int amount);
 		void beRepaired (unsigned int amount);
-		void vaulthunter_dot_exe(std::string const & target);
+		void challengeNewcomer();
 
-
-		FragTrap &operator=(FragTrap const &other);
+		ScavTrap &operator=(ScavTrap const &other);
 
 };
