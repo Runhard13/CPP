@@ -3,14 +3,6 @@ project(CPP)
 
 set(CMAKE_CXX_STANDARD 98)
 
-include_directories(cpp00/ex01)
-include_directories(cpp01/ex00)
-include_directories(cpp01/ex02)
-include_directories(cpp00/ex03)
-include_directories(cpp01/ex04)
-include_directories(cpp01/ex05)
-include_directories(cpp00/ex06)
-
 add_executable(megaphone
 		cpp00/ex00/megaphone.cpp)
 add_executable(phonebook

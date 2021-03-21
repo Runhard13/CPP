@@ -22,6 +22,7 @@ class FragTrap
 	int _armor;
 	public:
 		FragTrap();
+		FragTrap(const std:: string& n);
 		FragTrap(FragTrap const &other);
 		~FragTrap();
 
