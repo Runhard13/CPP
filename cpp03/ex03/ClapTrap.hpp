@@ -5,13 +5,12 @@
 **		Includes
 **==========================
 */
-
 #include <iostream>
 #include <cstdlib>
 
-class FragTrap
+class ClapTrap
 {
-	private:
+	protected:
 	int _hitPoints;
 	int _maxHitPoints;
 	int _energy;
@@ -21,19 +20,18 @@ class FragTrap
 	int _meleeDamage;
 	int _rangedDamage;
 	int _armor;
+	std::string _type;
+
 	public:
-		FragTrap();
-		FragTrap(const std:: string& n);
-		FragTrap(FragTrap const &other);
-		~FragTrap();
+		ClapTrap();
+		ClapTrap(ClapTrap const &other);
+		~ClapTrap();
 
 		void rangedAttack (std::string const & target);
 		void meleeAttack (std::string const & target);
 		void takeDamage (unsigned int amount);
 		void beRepaired (unsigned int amount);
-		void vaulthunter_dot_exe(std::string const & target);
 
-
-		FragTrap &operator=(FragTrap const &other);
+		ClapTrap &operator=(ClapTrap const &other);
 
 };

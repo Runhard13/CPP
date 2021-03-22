@@ -17,7 +17,7 @@ ScavTrap::ScavTrap (const std::string& n) : _hitPoints(100), _maxHitPoints(100),
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "SCV-TP <" << _name << "> destructed" << std::endl;
+    std::cout << "SCV-TP <" << _name << ">: I don't want to play with you anymore!" << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &other)
@@ -85,8 +85,7 @@ void ScavTrap::takeDamage(unsigned int amount)
 	if (exceed)
 		std::cout << ". Exceed  max hp  by " << exceed << " damage";
 	std::cout << "). HP: " << _hitPoints << std::endl;
-	if (_hitPoints == 0)
-		std::cout << "SCV-TP <" << _name << ">: I don't want to play with you anymore!" << std::endl;
+
 }
 
 void ScavTrap::beRepaired(unsigned int amount)

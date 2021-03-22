@@ -2,29 +2,37 @@
 
 int main ()
 {
-	FragTrap one = FragTrap("Bender");
-	FragTrap two = FragTrap();
 
-	std::cout << "__________________Attacks testing__________________" << std::endl;
+    FragTrap frag = FragTrap("Bender");
 
-	std::cout << "*** Standard ***" << std::endl;
-	one.meleeAttack("target dummy");
-	one.rangedAttack("flying robot");
-	std::cout << "*** VaultHunter ***" << std::endl;
-	two.vaulthunter_dot_exe(" big boss");
-	two.vaulthunter_dot_exe(" big boss");
-	two.vaulthunter_dot_exe(" big boss");
-	two.vaulthunter_dot_exe(" big boss");
-	two.vaulthunter_dot_exe(" big boss");
-	std::cout << "__________________Healing & Taking damage__________________" << std::endl;
 
-	one.takeDamage(25);
-	one.takeDamage(10);
-	one.takeDamage(25);
-	one.beRepaired(20);
-	one.beRepaired(200);
-	one.takeDamage(1304);
+    std::cout << "__________________Attacks testing__________________" << std::endl;
 
-	std::cout << "__________________Exiting main, destructing all robots :)__________________" << std::endl;
-	return 0;
+    std::cout << "*** Melee ***" << std::endl;
+    frag.meleeAttack("Training Dummy");
+    std::cout << std::endl;
+
+    std::cout << "*** Ranged ***" << std::endl;
+    frag.rangedAttack("Training Dummy");
+    std::cout << std::endl;
+
+    std::cout << "*** FragTrap's VaultHunter ***" << std::endl;
+    frag.vaulthunter_dot_exe(" big boss");
+    frag.vaulthunter_dot_exe(" big boss");
+    frag.vaulthunter_dot_exe(" big boss");
+    frag.vaulthunter_dot_exe(" big boss");
+    frag.vaulthunter_dot_exe(" big boss");
+    std::cout << std::endl;
+
+    std::cout << "__________________Healing & Taking damage__________________" << std::endl;
+    frag.takeDamage(10);
+    frag.takeDamage(21);
+    frag.takeDamage(12);
+    frag.takeDamage(130);
+    frag.beRepaired(23);
+    frag.beRepaired(100);
+    std::cout << std::endl;
+
+    std::cout << "__________________Exiting main, destructing all robots :)__________________" << std::endl;
+    return 0;
 }

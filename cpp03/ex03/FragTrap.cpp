@@ -4,6 +4,8 @@ FragTrap::FragTrap() : ClapTrap()
 {
 	srand(time(0));
 	_name = "Destroyer";
+    _maxHitPoints = 100;
+    _hitPoints = 100;
 	_energy = 100;
 	_maxEnergy = 100;
 	_meleeDamage = 30;
@@ -23,6 +25,8 @@ FragTrap::FragTrap(const std::string& n) : ClapTrap()
     _rangedDamage = 20;
     _armor = 5;
     _type = "<FR4G-TP> ";
+    _maxHitPoints = 100;
+    _hitPoints = 100;
     std::cout << _type << _name << " combat code compiled successfully" << std::endl;
 }
 
@@ -67,9 +71,9 @@ void	FragTrap::vaulthunter_dot_exe(std::string const & target)
 	if (_energy >= 25)
 	{
 		_energy -= 25;
-		std::cout << _type << _name << " uses his ";
+		std::cout << "FR4G-TP <" << _name << "> uses his ";
 		std::cout << atks[rand() % 5] << " on " << target << "!" << std::endl;
 	}
 	else
-		std::cout << _type << _name << "> is out of energy!" << std::endl;
+		std::cout << "FR4G-TP <" << _name << "> is out of energy!" << std::endl;
 }

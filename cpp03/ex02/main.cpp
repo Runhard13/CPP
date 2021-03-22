@@ -5,43 +5,46 @@
 int main ()
 {
 
-	FragTrap one = FragTrap("Bender");
-    ScavTrap two = ScavTrap("Sam");
-	ScavTrap three = ScavTrap();
+    FragTrap frag = FragTrap("Bender");
+    ScavTrap scav = ScavTrap();
 
 
-	std::cout << "__________________Attacks testing__________________" << std::endl;
 
-	std::cout << "*** Standard ***" << std::endl;
-	one.meleeAttack("target dummy");
-	one.rangedAttack("flying robot");
-	three.rangedAttack("Sveta");
-	three.meleeAttack("Sweta");
-	std::cout << std::endl;
+    std::cout << "__________________Attacks testing__________________" << std::endl;
 
-	std::cout << "*** VaultHunter ***" << std::endl;
-	one.vaulthunter_dot_exe(" big boss");
-	one.vaulthunter_dot_exe(" big boss");
-	one.vaulthunter_dot_exe(" big boss");
-	one.vaulthunter_dot_exe(" big boss");
-	one.vaulthunter_dot_exe(" big boss");
-	std::cout << std::endl;
+    std::cout << "*** Melee ***" << std::endl;
+    frag.meleeAttack("Training Dummy");
+    scav.meleeAttack("Training Dummy");
+    std::cout << std::endl;
 
-	std::cout << "*** Challenges ***" << std::endl;
-	three.challengeNewcomer();
-	three.challengeNewcomer();
-	three.challengeNewcomer();
-	std::cout << std::endl;
+    std::cout << "*** Ranged ***" << std::endl;
+    frag.rangedAttack("Training Dummy");
+    scav.rangedAttack("Training Dummy");
+    std::cout << std::endl;
 
-	std::cout << "__________________Healing & Taking damage__________________" << std::endl;
-	one.takeDamage(25);
-	one.takeDamage(25);
-	three.takeDamage(10);
-	three.beRepaired(20);
-	one.beRepaired(200);
-	one.takeDamage(1304);
-	std::cout << std::endl;
+    std::cout << "*** FragTrap's VaultHunter ***" << std::endl;
+    frag.vaulthunter_dot_exe(" big boss");
+    frag.vaulthunter_dot_exe(" big boss");
+    frag.vaulthunter_dot_exe(" big boss");
+    frag.vaulthunter_dot_exe(" big boss");
+    frag.vaulthunter_dot_exe(" big boss");
+    std::cout << std::endl;
 
-	std::cout << "__________________Exiting main, destructing all robots :)__________________" << std::endl;
-	return 0;
+    std::cout << "*** ScavTrap's Challenges ***" << std::endl;
+    scav.challengeNewcomer();
+    scav.challengeNewcomer();
+    scav.challengeNewcomer();
+    std::cout << std::endl;
+
+    std::cout << "__________________Healing & Taking damage__________________" << std::endl;
+    frag.takeDamage(10);
+    frag.takeDamage(21);
+    frag.takeDamage(12);
+    frag.takeDamage(130);
+    frag.beRepaired(23);
+    frag.beRepaired(100);
+    std::cout << std::endl;
+
+    std::cout << "__________________Exiting main, destructing all robots :)__________________" << std::endl;
+    return 0;
 }

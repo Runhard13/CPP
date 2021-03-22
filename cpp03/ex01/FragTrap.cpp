@@ -31,7 +31,7 @@ FragTrap::FragTrap(FragTrap const &other)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FR4G-TP <" << _name << "> destructed" << std::endl;
+    std::cout << "FR4G-TP " << _name << ": Argh arghargh stop gurgle gurglegurgle urgh... stop it." << std::endl;
 }
 
 FragTrap &FragTrap::operator=(FragTrap const &other)
@@ -84,8 +84,6 @@ void FragTrap::takeDamage(unsigned int amount)
     if (exceed)
     	std::cout << ". Exceed  max hp  by " << exceed << " damage";
     std::cout << "). HP: " << _hitPoints << std::endl;
-    if (_hitPoints == 0)
-    	std::cout << "FR4G-TP <" << _name << ">: Argh arghargh stop gurgle gurglegurgle urgh... stop it." << std::endl;
 }
 
 void FragTrap::beRepaired(unsigned int amount)

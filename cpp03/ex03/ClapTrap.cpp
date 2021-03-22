@@ -3,14 +3,12 @@
 ClapTrap::ClapTrap()
 {
 	_level = 1;
-	_maxHitPoints = 100;
-	_hitPoints = 100;
 	std::cout << "<CL6P-TP> Big Brother ready for action!" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "<CL6P-TP> Big Brother shutting down" << std::endl;
+    std::cout << "<CL6P-TP> Big Brother shutting down" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &other)
@@ -78,6 +76,8 @@ void ClapTrap::takeDamage(unsigned int amount)
 	if (exceed)
 		std::cout << ". Exceed  max hp  by " << exceed << " damage";
 	std::cout << "). HP: " << _hitPoints << std::endl;
+	if (_hitPoints == 0)
+		std::cout << _type << _name << ": I don't want to play with you anymore!" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
