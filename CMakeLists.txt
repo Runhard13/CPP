@@ -30,3 +30,15 @@ add_executable(ex03
 		cpp03/ex03/ClapTrap.cpp
 		cpp03/ex03/NinjaTrap.hpp
 		cpp03/ex03/NinjaTrap.cpp)
+add_executable(ex04
+		cpp03/ex04/FragTrap.cpp
+		cpp03/ex04/FragTrap.hpp
+		cpp03/ex04/main.cpp
+		cpp03/ex04/ScavTrap.cpp
+		cpp03/ex04/ScavTrap.hpp
+		cpp03/ex04/ClapTrap.hpp
+		cpp03/ex04/ClapTrap.cpp
+		cpp03/ex04/NinjaTrap.hpp
+		cpp03/ex04/SuperTrap.cpp
+		cpp03/ex04/SuperTrap.hpp
+		cpp03/ex04/NinjaTrap.cpp)
