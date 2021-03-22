@@ -6,6 +6,8 @@
 **==========================
 */
 #include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 class NinjaTrap : public ClapTrap
 {
@@ -15,10 +17,10 @@ class NinjaTrap : public ClapTrap
 		NinjaTrap(NinjaTrap const &other);
 		~NinjaTrap();
 
-        void ninjaShoebox(const ClapTrap & target);
-        void ninjaShoebox(const FragTrap & target);
-        void ninjaShoebox(const ScavTrap & target);
-        void ninjaShoebox(const NinjaTrap & target);
+		void ninjaShoebox(FragTrap & target);
+		void ninjaShoebox(ClapTrap & target);
+        void ninjaShoebox(ScavTrap & target);
+		void ninjaShoebox(NinjaTrap & target);
 
 		NinjaTrap &operator=(NinjaTrap const &other);
 

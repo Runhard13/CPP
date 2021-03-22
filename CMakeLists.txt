@@ -29,4 +29,4 @@ add_executable(ex03
 		cpp03/ex03/ClapTrap.hpp
 		cpp03/ex03/ClapTrap.cpp
 		cpp03/ex03/NinjaTrap.hpp
-		cpp03/ex03/NinJaTrap.cpp)
+		cpp03/ex03/NinjaTrap.cpp)

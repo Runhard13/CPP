@@ -22,13 +22,14 @@ ClapTrap::ClapTrap(ClapTrap const &other)
 	_energy = other._energy;
 	_maxEnergy = other._maxEnergy;
 	_maxHitPoints = other._maxEnergy;
+	_name = other._name;
 	std::cout << "ClapTrap battle unit duplicated" << std::endl;
 }
 
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &other)
 {
-	std::cout << _name << " known as " << other._name << " from now" << std::endl;
+	std::cout << _name << " known as ";
 	_hitPoints = other._hitPoints;
 	_armor = other._armor;
 	_rangedDamage = other._rangedDamage;
@@ -37,6 +38,8 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &other)
 	_energy = other._energy;
 	_maxEnergy = other._maxEnergy;
 	_maxHitPoints = other._maxEnergy;
+	_name = other._name;
+	std::cout << other._name << std::endl;
 	return(*this);
 }
 
@@ -76,8 +79,6 @@ void ClapTrap::takeDamage(unsigned int amount)
 	if (exceed)
 		std::cout << ". Exceed  max hp  by " << exceed << " damage";
 	std::cout << "). HP: " << _hitPoints << std::endl;
-	if (_hitPoints == 0)
-		std::cout << _type << _name << ": I don't want to play with you anymore!" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
@@ -97,5 +98,10 @@ void ClapTrap::beRepaired(unsigned int amount)
 	if (overheal)
 		std::cout << "(Overheal: " << overheal << " points) ";
 	std::cout <<  "HP: " << _hitPoints << std::endl;
+}
+
+std::string ClapTrap::getName()
+{
+	return(_name);
 }
 

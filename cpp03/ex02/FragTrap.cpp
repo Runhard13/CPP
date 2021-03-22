@@ -30,13 +30,14 @@ FragTrap::FragTrap(FragTrap const &other)
 {
 	srand(time(0));
 	_hitPoints = other._hitPoints;
-    _armor = other._armor;
-    _rangedDamage = other._rangedDamage;
-    _meleeDamage = other._meleeDamage;
-    _level = other._level;
-    _energy = other._energy;
-    _maxEnergy = other._maxEnergy;
-    _maxHitPoints = other._maxEnergy;
+	_armor = other._armor;
+	_rangedDamage = other._rangedDamage;
+	_meleeDamage = other._meleeDamage;
+	_level = other._level;
+	_energy = other._energy;
+	_maxEnergy = other._maxEnergy;
+	_maxHitPoints = other._maxEnergy;
+	_name = other._name;
     std::cout << "FragTrap battle unit duplicated" << std::endl;
 }
 
@@ -47,15 +48,17 @@ FragTrap::~FragTrap()
 
 FragTrap &FragTrap::operator=(FragTrap const &other)
 {
-    std::cout << _name << " known as " << other._name << " from now" << std::endl;
-    _hitPoints = other._hitPoints;
-    _armor = other._armor;
-    _rangedDamage = other._rangedDamage;
-    _meleeDamage = other._meleeDamage;
-    _level = other._level;
-    _energy = other._energy;
-    _maxEnergy = other._maxEnergy;
-    _maxHitPoints = other._maxEnergy;
+	std::cout << _name << " known as ";
+	_hitPoints = other._hitPoints;
+	_armor = other._armor;
+	_rangedDamage = other._rangedDamage;
+	_meleeDamage = other._meleeDamage;
+	_level = other._level;
+	_energy = other._energy;
+	_maxEnergy = other._maxEnergy;
+	_maxHitPoints = other._maxEnergy;
+	_name = other._name;
+	std::cout << other._name << std::endl;
 	return(*this);
 }
 

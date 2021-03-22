@@ -1,5 +1,6 @@
 #include "ClapTrap.hpp"
 
+
 ClapTrap::ClapTrap()
 {
 	_level = 1;
@@ -24,13 +25,14 @@ ClapTrap::ClapTrap(ClapTrap const &other)
 	_energy = other._energy;
 	_maxEnergy = other._maxEnergy;
 	_maxHitPoints = other._maxEnergy;
+	_name = other._name;
 	std::cout << "ClapTrap battle unit duplicated" << std::endl;
 }
 
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &other)
 {
-	std::cout << _name << " known as " << other._name << " from now" << std::endl;
+	std::cout << _name << " known as ";
 	_hitPoints = other._hitPoints;
 	_armor = other._armor;
 	_rangedDamage = other._rangedDamage;
@@ -39,6 +41,8 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &other)
 	_energy = other._energy;
 	_maxEnergy = other._maxEnergy;
 	_maxHitPoints = other._maxEnergy;
+	_name = other._name;
+	std::cout << other._name << std::endl;
 	return(*this);
 }
 

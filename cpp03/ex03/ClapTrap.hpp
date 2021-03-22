@@ -31,6 +31,7 @@ class ClapTrap
 		void meleeAttack (std::string const & target);
 		void takeDamage (unsigned int amount);
 		void beRepaired (unsigned int amount);
+		std::string  getName();
 
 		ClapTrap &operator=(ClapTrap const &other);
 

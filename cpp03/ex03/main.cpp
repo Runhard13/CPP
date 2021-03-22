@@ -9,6 +9,7 @@ int main ()
 	FragTrap frag = FragTrap("Bender");
     ScavTrap scav = ScavTrap();
 	NinjaTrap ninja = NinjaTrap();
+	ClapTrap clap;
 
 
 
@@ -40,6 +41,14 @@ int main ()
 	scav.challengeNewcomer();
 	std::cout << std::endl;
 
+	std::cout << "*** NinjaTrap's Special ***" << std::endl;
+	ninja.ninjaShoebox(clap);
+	ninja.ninjaShoebox(frag);
+	ninja.ninjaShoebox(scav);
+	ninja.ninjaShoebox(ninja);
+	ninja.ninjaShoebox(ninja);
+
+
 	std::cout << "__________________Healing & Taking damage__________________" << std::endl;
 	frag.takeDamage(10);
 	frag.takeDamage(21);
@@ -64,6 +73,24 @@ int main ()
     ninja.beRepaired(23);
     ninja.beRepaired(100);
     std::cout << std::endl;
+
+	std::cout << "__________________Copy & Assignation__________________" << std::endl;
+
+	FragTrap a = FragTrap(frag);
+	ScavTrap b = ScavTrap(scav);
+	NinjaTrap c = NinjaTrap(ninja);
+	ClapTrap d = ClapTrap(clap);
+	std::cout << std::endl;
+
+	FragTrap aa = FragTrap("Cool Name");
+	ScavTrap bb = ScavTrap("qwerty");
+	NinjaTrap cc = NinjaTrap("Lololo");
+	std::cout << std::endl;
+
+	a = aa;
+	b = bb;
+	c = cc;
+	std::cout << std::endl;
 
 	std::cout << "__________________Exiting main, destructing all robots :)__________________" << std::endl;
 	return 0;

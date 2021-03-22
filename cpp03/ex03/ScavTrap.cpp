@@ -10,6 +10,8 @@ ScavTrap::ScavTrap() : ClapTrap()
 	_maxEnergy = 50;
 	_type = "<SC5V-TP> ";
 	_name = "Gend";
+	_maxHitPoints = 100;
+	_hitPoints = 100;
 	std::cout << _type << _name << ": you shall not pass!" << std::endl;
 }
 
@@ -24,6 +26,8 @@ ScavTrap::ScavTrap (const std::string& n) : ClapTrap()
     _energy = 50;
     _maxEnergy = 50;
     _type = "<SC5V-TP> ";
+	_maxHitPoints = 100;
+	_hitPoints = 100;
 	std::cout << _type << _name << ": you shall not pass!" << std::endl;
 }
 
@@ -43,13 +47,14 @@ ScavTrap::ScavTrap(ScavTrap const &other)
 	_energy = other._energy;
 	_maxEnergy = other._maxEnergy;
 	_maxHitPoints = other._maxEnergy;
+	_name = other._name;
 	std::cout << "ScavTrap battle unit duplicated" << std::endl;
 }
 
 
 ScavTrap &ScavTrap::operator=(ScavTrap const &other)
 {
-	std::cout << _name << " known as " << other._name << " from now" << std::endl;
+	std::cout << _name << " known as ";
 	_hitPoints = other._hitPoints;
 	_armor = other._armor;
 	_rangedDamage = other._rangedDamage;
@@ -58,6 +63,8 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &other)
 	_energy = other._energy;
 	_maxEnergy = other._maxEnergy;
 	_maxHitPoints = other._maxEnergy;
+	_name = other._name;
+	std::cout << other._name << std::endl;
 	return(*this);
 }
 
