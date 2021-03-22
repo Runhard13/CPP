@@ -1,11 +1,14 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 
 int main ()
 {
 
 	FragTrap one = FragTrap("Bender");
+    ScavTrap two = ScavTrap("Sam");
 	ScavTrap three = ScavTrap();
+
 
 	std::cout << "__________________Attacks testing__________________" << std::endl;
 

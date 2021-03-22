@@ -6,6 +6,7 @@
 **==========================
 */
 #include <iostream>
+#include <cstdlib>
 
 class ClapTrap
 {
@@ -23,17 +24,6 @@ class ClapTrap
 
 	public:
 		ClapTrap();
-		ClapTrap (int hp,
-			int maxhp,
-			int energy,
-			int maxEnergy,
-			int lvl,
-			int meleeDmg,
-			int rangeDmg,
-			int armor,
-			std::string n,
-			std::string t);
-		ClapTrap (const std::string& n);
 		ClapTrap(ClapTrap const &other);
 		~ClapTrap();
 

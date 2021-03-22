@@ -6,9 +6,9 @@
 **==========================
 */
 
-#include <iostream>
+#include "ClapTrap.hpp"
 
-class FragTrap
+class FragTrap : public ClapTrap
 {
 	private:
 	int _hitPoints;
@@ -26,10 +26,6 @@ class FragTrap
 		FragTrap(FragTrap const &other);
 		~FragTrap();
 
-		void rangedAttack (std::string const & target);
-		void meleeAttack (std::string const & target);
-		void takeDamage (unsigned int amount);
-		void beRepaired (unsigned int amount);
 		void vaulthunter_dot_exe(std::string const & target);
 
 

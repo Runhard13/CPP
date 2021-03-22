@@ -3,22 +3,27 @@
 ScavTrap::ScavTrap() : ClapTrap()
 {
 	srand(time(0));
-	_hitPoints = 100;
 	_armor = 3;
 	_rangedDamage = 15;
 	_meleeDamage = 20;
-	_level = 1;
 	_energy = 50;
 	_maxEnergy = 50;
-	_maxHitPoints = 100;
-	_type = "<5C4V-TP> ";
+	_type = "<SC5V-TP> ";
 	_name = "Gend";
 	std::cout << _type << _name << ": you shall not pass!" << std::endl;
 }
 
-ScavTrap::ScavTrap (const std::string& n) : ClapTrap(100, 100, 50, 50, 1, 20, 15, 3, n, "<5C4V-TP> ")
+ScavTrap::ScavTrap (const std::string& n) : ClapTrap()
 {
 	_name = n;
+	_type = "<SC5V-TP> ";
+    srand(time(0));
+    _armor = 3;
+    _rangedDamage = 15;
+    _meleeDamage = 20;
+    _energy = 50;
+    _maxEnergy = 50;
+    _type = "<SC5V-TP> ";
 	std::cout << _type << _name << ": you shall not pass!" << std::endl;
 }
 
@@ -66,7 +71,14 @@ void ScavTrap::challengeNewcomer()
 	srand(time(0) + rand());
 	int random = rand() % 5;
 
-	std::cout << _type << _name << " challenges you to "
-			  << randomChallenge[random] << std::endl;
+	if (_energy >= 25)
+
+    {
+	    std::cout << _type << _name << " challenges you to " << randomChallenge[random] << std::endl;
+	    _energy -= 25;
+    }
+	else
+	    std:: cout << _type << _name << " out of energy!" << std::endl;
+
 }
 

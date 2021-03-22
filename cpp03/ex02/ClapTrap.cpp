@@ -2,47 +2,15 @@
 
 ClapTrap::ClapTrap()
 {
-	_name = "Big Brother";
-	_type = "<CL6P-TP> ";
-//	_armor = 5;
-//	_rangedDamage = 10;
-//	_meleeDamage = 10;
-//	_level = 1;
-//	_maxEnergy = 100;
-//	_energy = 100;
-//	_maxHitPoints = 100;
-//	_hitPoints = 100;
-	std::cout << _type << _name << ": ready for action!" << std::endl;
-}
-
-ClapTrap::ClapTrap (int hp,
-					int maxhp,
-					int energy,
-					int maxEnergy,
-					int lvl,
-					int meleeDmg,
-					int rangeDmg,
-					int armor,
-					std::string n,
-					std::string t)
-{
-	_name = n;
-	_type = t;
-	_hitPoints = hp;
-	_maxHitPoints = maxhp;
-	_energy = energy;
-	_maxEnergy = maxEnergy;
-	_level = lvl;
-	_meleeDamage = meleeDmg;
-	_rangedDamage = rangeDmg;
-	_armor = armor;
-
-	std::cout << _type << _name << ": ready for action!" << std::endl;
+	_level = 1;
+	_maxHitPoints = 100;
+	_hitPoints = 100;
+	std::cout << "<CL6P-TP> Big Brother ready for action!" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << _type << _name << " destructed" << std::endl;
+	std::cout << "<CL6P-TP> Big Brother destructed" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &other)
