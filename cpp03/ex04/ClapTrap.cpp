@@ -105,3 +105,37 @@ std::string ClapTrap::getName()
 	return(_name);
 }
 
+int ClapTrap::getHP()
+{
+	return(_hitPoints);
+}
+
+int ClapTrap::getMaxHP()
+{
+	return(_maxHitPoints);
+}
+
+int ClapTrap::getEnergy()
+{
+	return(_energy);
+}
+
+int ClapTrap::getMaxEnergy()
+{
+	return(_maxEnergy);
+}
+
+int ClapTrap::getMelee()
+{
+	return(_meleeDamage);
+}
+
+int ClapTrap::getRanged()
+{
+	return(_rangedDamage);
+}
+
+int ClapTrap::getArmor()
+{
+	return(_armor);
+}

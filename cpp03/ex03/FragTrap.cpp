@@ -74,9 +74,9 @@ void	FragTrap::vaulthunter_dot_exe(std::string const & target)
 	if (_energy >= 25)
 	{
 		_energy -= 25;
-		std::cout << "FR4G-TP <" << _name << "> uses his ";
+		std::cout << "<FR4G-TP>" << _name << " uses his ";
 		std::cout << atks[rand() % 5] << " on " << target << "!" << std::endl;
 	}
 	else
-		std::cout << "FR4G-TP <" << _name << "> is out of energy!" << std::endl;
+		std::cout << "<FR4G-TP> " << _name << " is out of energy!" << std::endl;
 }

@@ -17,7 +17,7 @@ ScavTrap::ScavTrap (const std::string& n) : _hitPoints(100), _maxHitPoints(100),
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << "SCV-TP <" << _name << ">: I don't want to play with you anymore!" << std::endl;
+    std::cout << "SCV-TP <" << _name << ": I don't want to play with you anymore!" << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &other)

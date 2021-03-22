@@ -29,7 +29,7 @@ ScavTrap::ScavTrap (const std::string& n) : ClapTrap()
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << "<SC5V-TP> " << _name << ">: I don't want to play with you anymore!" << std::endl;
+    std::cout << "<SC5V-TP> " << _name << ": I don't want to play with you anymore!" << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &other)

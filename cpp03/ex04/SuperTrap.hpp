@@ -8,19 +8,27 @@
 
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
-#include "ScavTrap.hpp"
 #include "NinjaTrap.hpp"
 
 class SuperTrap : public FragTrap, public NinjaTrap
 {
-	private:
-	using FragTrap::vaulthunter_dot_exe;
 
-	public:
-		SuperTrap();
-		SuperTrap(SuperTrap const &other);
-		~SuperTrap();
+private:
+	using FragTrap::_hitPoints;
+	using FragTrap::_maxHitPoints;
+	using NinjaTrap::_energy;
+	using NinjaTrap::_maxEnergy;
+	using NinjaTrap::_meleeDamage;
+	using FragTrap::_rangedDamage;
+	using FragTrap::_armor;
+public:
+	SuperTrap();
+	SuperTrap(const std::string& n);
+	SuperTrap(SuperTrap const &other);
+	~SuperTrap();
 
-		SuperTrap &operator=(SuperTrap const &other);
+	void rangedAttack(std::string const & target);
+	void meleeAttack(std::string const & target);
 
+	SuperTrap &operator=(SuperTrap const &other);
 };

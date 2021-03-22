@@ -32,6 +32,13 @@ class ClapTrap
 		void takeDamage (unsigned int amount);
 		void beRepaired (unsigned int amount);
 		std::string  getName();
+		int getHP();
+		int getMaxHP();
+		int getEnergy();
+		int getMaxEnergy();
+		int getMelee();
+		int getRanged();
+		int getArmor();
 
 		ClapTrap &operator=(ClapTrap const &other);
 
