@@ -43,6 +43,7 @@ int main()
 	me->attack(a);
 	me->attack(a);
 	me->attack(a);
+
 	delete me;
 	delete pr;
 	delete pf;

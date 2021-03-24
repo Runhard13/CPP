@@ -53,7 +53,7 @@ void Character::attack(Enemy *enemy)
 {
     const int weaponCost = wep->getAPCost();
 
-    if (enemy->getHP() == 0 || !wep)
+    if ( !enemy || enemy->getHP() == 0 || !wep)
     	return;
     if (_ap - weaponCost >= 0)
     {
