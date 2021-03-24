@@ -18,19 +18,11 @@ Character::Character(Character const &other)
     std::string type;
     _name = other._name;
     _ap = other._ap;
-    if (other.wep)
-    {
-        type = other.wep->getName();
-        if (type == "Plasma Rifle")
-            wep =  new PlasmaRifle();
-        else if (type == "Power Fist")
-            wep = new PowerFist();
-    }
+    wep = other.wep;
 }
 
 Character::~Character()
 {
-    delete[] wep;
 }
 
 Character &Character::operator=(Character const &other)
@@ -40,15 +32,7 @@ Character &Character::operator=(Character const &other)
     {
         _name = other._name;
         _ap = other._ap;
-        if (other.wep)
-        {
-            type = other.wep->getName();
-            if (type == "Plasma Rifle")
-                wep =  new PlasmaRifle();
-            else if (type == "Power Fist")
-                wep = new PowerFist();
-        }
-
+        wep = other.wep;
     }
 
 	return(*this);
@@ -69,13 +53,15 @@ void Character::attack(Enemy *enemy)
 {
     const int weaponCost = wep->getAPCost();
 
-    if (enemy && wep && _ap - weaponCost >= 0)
+    if (enemy->getHP() == 0 || !wep)
+    	return;
+    if (_ap - weaponCost >= 0)
     {
         std::cout << _name << " attacks " << enemy->getType() << " with a " << getWep()->getName() << std::endl;
         wep->attack();
         enemy->takeDamage(wep->getDamage());
-        if (enemy->getHP() <= 0)
-            delete enemy;
+        if (enemy->getHP() == 0)
+			delete enemy;
         _ap -=(weaponCost);
     }
     else

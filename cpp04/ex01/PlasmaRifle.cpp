@@ -29,6 +29,7 @@ PlasmaRifle &PlasmaRifle::operator=(PlasmaRifle const &other)
 //methods
 void PlasmaRifle::attack() const
 {
-    std::cout << "* pschhh... SBAM! *" << std::endl;
+    std::cout << "* piouuu piouuu piouuu *" << std::endl;
+
 }
 

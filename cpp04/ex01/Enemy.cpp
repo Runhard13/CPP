@@ -44,13 +44,13 @@ std::string Enemy::getType() const {
 void Enemy::takeDamage(int damage)
 {
     int currentHP = getHP();
-    int taken = 0;
 
+    if (!currentHP)
+    	return;
     if (damage < 0)
         return;
-    taken = currentHP - damage;
-    if (taken < 0)
-        taken = currentHP;
-    _hp = currentHP - taken;
-    std::cout << _type << " takes " << taken << " points of damage! HP: " << _hp << std::endl;
+    if (damage > currentHP)
+    	damage = currentHP;
+    _hp = currentHP - damage;
+    std::cout << _type << " takes " << damage << " points of damage! HP: " << _hp << std::endl;
 }
