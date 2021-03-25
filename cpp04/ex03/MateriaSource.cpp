@@ -1,57 +1,91 @@
-#include "AMateria.hpp"
+#include "MateriaSource.hpp"
 
-AMateria::AMateria(/* args */)
+void		MateriaSource::learnMateria(AMateria* ptr)
 {
+    int	i = 0 ;
+
+   while (i < 4)
+   {
+       if (_materia[i] == 0)
+       {
+           _materia[i] = ptr;
+           return;
+       }
+       i++;
+   }
 }
 
-AMateria::AMateria(std::string const & type) :
-		xp_(0),
-		type(type)
+AMateria*	MateriaSource::createMateria(std::string const & type)
 {
+    int	i = 0;
+
+    while (i < 4)
+    {
+        if (_materia[i] != 0 && _materia[i]->getType() == type)
+            return(_materia[i]->clone());
+        i++;
+    }
+    return 0;
 }
 
-AMateria::AMateria(const AMateria &f)
+
+MateriaSource & MateriaSource::operator=(const MateriaSource & other)
 {
-	std::cout << "Copy constructor called" << std::endl;
-	*this = f;
+    int	i = 0;
+
+    if (this != &other)
+    {
+        while (i < 4)
+        {
+            if (_materia[i])
+                delete _materia[i];
+            i++;
+        }
+        i = 0;
+        while (i < 4)
+        {
+            if (other._materia[i])
+                _materia[i] = other._materia[i]->clone();
+            else
+                _materia[i] = 0;
+            i++;
+        }
+    }
+    return (*this);
 }
 
-AMateria::~AMateria()
+MateriaSource::MateriaSource()
 {
+    _materia[0] = 0;
+    _materia[1] = 0;
+    _materia[2] = 0;
+    _materia[3] = 0;
 }
 
-void AMateria::use(ICharacter& target)
+MateriaSource::MateriaSource(const MateriaSource & other)
 {
-	if (this->type.compare("ice") == 0)
-		std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
-	if (this->type.compare("cure") == 0)
-		std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+    int	i = 0;
+
+    while (i < 4)
+    {
+        if (other._materia[i])
+            _materia[i] = other._materia[i]->clone();
+        else
+            _materia[i] = 0;
+        i++;
+    }
 }
 
-AMateria & AMateria::operator=(AMateria const &rhs)
+MateriaSource::~MateriaSource()
 {
-	std::cout << "Assignment operator called" << std::endl;
-	if (this != &rhs)
-	{
-		this->type = rhs.getType();
-		this->xp_ = rhs.getXP();
-	}
-	return *this;
-}
+    int	i = 0;
 
-void AMateria::increaseXP()
-{
-	this->xp_ += 10;
-}
-
-unsigned int AMateria::getXP() const
-{
-	return this->xp_;
-}
-
-std::string const &AMateria::getType() const
-{
-	return this->type;
+    while (i < 4)
+    {
+        if (_materia[i])
+            delete _materia[i];
+        i++;
+    }
 }
 
 

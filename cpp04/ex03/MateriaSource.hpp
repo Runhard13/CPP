@@ -6,16 +6,22 @@
 **==========================
 */
 
+#include "AMateria.hpp"
+#include "IMateriaSource.hpp"
 
-class MateriaSource
+class MateriaSource : public IMateriaSource
 {
 	private:
+        AMateria* _materia[4];
 
 	public:
 		MateriaSource();
 		MateriaSource(MateriaSource const &other);
-		~MateriaSource();
+		virtual ~MateriaSource();
 
 		MateriaSource &operator=(MateriaSource const &other);
 
+        void learnMateria(AMateria *ptr);
+
+        AMateria *createMateria(const std::string &type);
 };

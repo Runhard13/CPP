@@ -6,7 +6,6 @@ Cure::Cure() : AMateria("cure")
 
 Cure::Cure(const Cure &other) : AMateria("cure")
 {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
 
@@ -16,7 +15,6 @@ Cure::~Cure()
 
 Cure & Cure::operator=(Cure const &other)
 {
-	std::cout << "Assignment operator called" << std::endl;
 	_xp = other._xp;
 	return *this;
 }

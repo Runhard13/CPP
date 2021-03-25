@@ -25,7 +25,8 @@ public:
 	unsigned int getXP() const; //Returns the Materia's XP
 	virtual AMateria* clone() const = 0;
 	virtual void use(ICharacter& target);
-
+    AMateria(const AMateria &other);
+    AMateria & operator=(AMateria const &other);
 
 	void increaseXP();
 };

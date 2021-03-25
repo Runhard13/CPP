@@ -1,12 +1,14 @@
 #pragma once
 
+
 /*
 **==========================
 **		Includes
 **==========================
 */
 
-#include "AMateria.hpp"
+#include <string>
+class AMateria;
 
 class ICharacter
 {

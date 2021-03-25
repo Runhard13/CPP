@@ -13,7 +13,7 @@ AMateria::AMateria(std::string const & type)
 AMateria::AMateria(const AMateria &other)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = other;
+	_xp = other.getXP();
 }
 
 AMateria::~AMateria()
@@ -26,6 +26,7 @@ void AMateria::use(ICharacter& target)
 		std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 	if (_type == "cure")
 		std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+	_xp += 10;
 }
 
 AMateria & AMateria::operator=(AMateria const &other)
@@ -34,11 +35,6 @@ AMateria & AMateria::operator=(AMateria const &other)
 	_type= other._type;
 	_xp = other._xp;
 	return *this;
-}
-
-void AMateria::increaseXP()
-{
-	_xp += 10;
 }
 
 unsigned int AMateria::getXP() const
