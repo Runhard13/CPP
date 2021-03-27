@@ -1,27 +1,37 @@
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
+
 
 int	main()
 {
-    Bureaucrat john("John", 1);
-    ShrubberyCreationForm shrub("cozy");
-    RobotomyRequestForm robot("Mike");
-    PresidentialPardonForm pres("Jerry Smith");
+	Bureaucrat	sanya("Sanya", 1);
+	Intern		intern;
+	Form		*form;
 
-    john.executeForm(shrub);
+	form = intern.makeForm("shrubbery creation", "ZZZ");
+	sanya.signForm(*form);
+	sanya.executeForm(*form);
+	std::cout << std::endl;
 
-    john.signForm(shrub);
-    john.executeForm(shrub);
+	form = intern.makeForm("robotomy request", "AAA");
+	sanya.signForm(*form);
+	sanya.executeForm(*form);
+	std::cout << std::endl;
 
-    john.signForm(robot);
-    john.executeForm(robot);
+	form = intern.makeForm("presidential pardon", "FFF");
+	sanya.signForm(*form);
+	sanya.executeForm(*form);
+	std::cout << std::endl;
 
-    john.signForm(pres);
-    john.executeForm(pres);
-
-    return (0);
+	try
+	{
+		form = intern.makeForm("fregerg", "ertrhger");
+	}
+	catch (std::exception & e)
+	{
+		std::cout << "Exception : " << e.what() << std::endl;
+	}
+	return (0);
 }

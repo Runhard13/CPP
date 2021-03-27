@@ -7,21 +7,25 @@
 
 int	main()
 {
-    Bureaucrat john("John", 1);
-    ShrubberyCreationForm shrub("cozy");
-    RobotomyRequestForm robot("Mike");
-    PresidentialPardonForm pres("Jerry Smith");
+    Bureaucrat qwer("qwer", 1);
+    ShrubberyCreationForm shrub("treeeee");
+    RobotomyRequestForm robot("zzz");
+    PresidentialPardonForm pres("ASAS");
 
-    john.executeForm(shrub);
+    qwer.executeForm(shrub);
+    std::cout << std::endl;
 
-    john.signForm(shrub);
-    john.executeForm(shrub);
+    qwer.signForm(shrub);
+    qwer.executeForm(shrub);
+	std::cout << std::endl;
 
-    john.signForm(robot);
-    john.executeForm(robot);
+    qwer.signForm(robot);
+    qwer.executeForm(robot);
+	std::cout << std::endl;
 
-    john.signForm(pres);
-    john.executeForm(pres);
+    qwer.signForm(pres);
+    qwer.executeForm(pres);
+	std::cout << std::endl;
 
     return (0);
 }

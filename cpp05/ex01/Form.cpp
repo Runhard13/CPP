@@ -10,10 +10,7 @@ Form::Form(const Form & other) : _name(other.getName()), _signGrade(other.getSig
     _signed = false;
 }
 
-Form::~Form()
-{
-
-}
+Form::~Form(){}
 
 Form &Form::operator=(Form const &other)
 {
@@ -79,5 +76,3 @@ std::ostream & operator<<(std::ostream & os, const Form & src)
     os << "Grade to execute - " << src.getExecGrade() << "." << std::endl;
     return (os);
 }
-
-

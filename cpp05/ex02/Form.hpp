@@ -38,6 +38,7 @@ public:
     Form(const std::string& name, int signGrade, int execGrade);
 	Form(Form const &other);
 	virtual ~Form();
+	Form &operator=(Form const &other);
 
     class GradeTooHighException : public std::exception
     {
@@ -54,10 +55,6 @@ public:
     public:
         virtual const char* what() const throw();
     };
-
-
-	Form &operator=(Form const &other);
-
 };
 
 std::ostream & operator<<(std::ostream & os, const Form & src);

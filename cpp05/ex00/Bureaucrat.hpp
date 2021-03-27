@@ -12,31 +12,32 @@
 class Bureaucrat
 {
 private:
-	const std::string _name;
-	int			_grade;
+	const			std::string _name;
+	int				_grade;
 	Bureaucrat();
 
 public:
-	Bureaucrat(Bureaucrat const &other);
+	const 			std::string getName() const;
+	int 			getGrade() const;
+	void 			incGrade();
+	void 			decGrade();
+
 	~Bureaucrat();
+	Bureaucrat(Bureaucrat const &other);
 	Bureaucrat(const std::string& name, int grade);
-	const std::string getName() const;
-	int getGrade() const;
-	void incGrade();
-	void decGrade();
+	Bureaucrat &operator=(Bureaucrat const &other);
+
 	class GradeTooHighException : public std::exception
 	{
 		public:
 			virtual const char* what() const throw();
 	};
+
 	class GradeTooLowException : public std::exception
 	{
 	public:
 		virtual const char* what() const throw();
 	};
-
-
-		Bureaucrat &operator=(Bureaucrat const &other);
 };
 
-std::ostream & operator<<(std::ostream & o, Bureaucrat const & rhs);
+std::ostream & operator<<(std::ostream & o, Bureaucrat const & other);
