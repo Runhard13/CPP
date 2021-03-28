@@ -12,7 +12,6 @@ add_executable(ex03
 		cpp05/ex03/Form.cpp
 		cpp05/ex03/Intern.cpp)
 
-add_executable(ex01
-		cpp05/ex01/Bureaucrat.cpp
-		cpp05/ex01/main.cpp
-		cpp05/ex01/Form.cpp)
+add_executable(ex00
+		cpp06/ex00/Convert.cpp
+		cpp06/ex00/main.cpp)

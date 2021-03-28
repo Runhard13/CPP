@@ -1,0 +1,29 @@
+NAME = convert
+
+CC = clang++
+
+CFLAGS = -Wall -Wextra -Werror -std=c++98
+
+SRC = Convert.cpp main.cpp
+
+HEADER = Convert.hpp
+
+OBJ = $(SRC:.cpp=.o)
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+.cpp.o:
+	$(CC) $(CFLAGS) -c $<
+
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all re clean fclean
