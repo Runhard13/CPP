@@ -1,23 +1,23 @@
 #include "whatever.hpp"
 #include <iostream>
 
-class Test
+class Awesome
 {
 public:
-    Test( int n ) : _n( n ) {}
-    bool operator==( Test const & rhs ) { return (this->_n == rhs._n); }
-    bool operator!=( Test const & rhs ) { return (this->_n != rhs._n); }
-    bool operator>( Test const & rhs ) { return (this->_n > rhs._n); }
-    bool operator<( Test const & rhs ) { return (this->_n < rhs._n); }
-    bool operator>=( Test const & rhs ) { return (this->_n >= rhs._n); }
-    bool operator<=( Test const & rhs ) { return (this->_n <= rhs._n); }
+    Awesome( int n ) : _n( n ) {}
+    bool operator==( Awesome const & rhs ) { return (this->_n == rhs._n); }
+    bool operator!=( Awesome const & rhs ) { return (this->_n != rhs._n); }
+    bool operator>( Awesome const & rhs ) { return (this->_n > rhs._n); }
+    bool operator<( Awesome const & rhs ) { return (this->_n < rhs._n); }
+    bool operator>=( Awesome const & rhs ) { return (this->_n >= rhs._n); }
+    bool operator<=( Awesome const & rhs ) { return (this->_n <= rhs._n); }
     int get() const { return _n; }
 
 private:
     int _n;
 };
 
-std::ostream & operator<<( std::ostream & o, Test const & rhs ) { o << rhs.get(); return o; };
+std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get(); return o; };
 int main()
 {
 
@@ -58,8 +58,8 @@ int main()
     std::cout << std::endl;
 
     std::cout << "_____COMPLICATED" <<std::endl;
-    Test lol(5);
-    Test kek(500);
+    Awesome lol(5);
+    Awesome kek(500);
     ::swap( lol, kek );
     std::cout << "lol = " << lol << ", kek = " << kek << std::endl;
     std::cout << "min( lol, kek ) = " << ::min( lol, kek ) << std::endl;

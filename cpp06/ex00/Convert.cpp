@@ -5,57 +5,30 @@ Convert::~Convert(){}
 
 Convert::Convert(Convert const &other)
 {
-    (void)other;
+	_inputChar = other._inputChar;
+	_inputString = other._inputString;
 }
 
 Convert &Convert::operator=(Convert const &other)
 {
-    (void)other;
+   if (this != &other)
+   {
+	   _inputChar = other._inputChar;
+	   _inputString = other._inputString;
+   }
     return(*this);
 }
 
-std::string Convert::getChar() const
-{
-    return _cString;
-}
-
-std::string Convert::getInt() const
-{
-    return _iString;
-}
-
-std::string Convert::getFloat() const
-{
-    return _fString;
-}
-
-std::string Convert::getDouble() const
-{
-    return _dString;
-}
-
-Convert::Convert(char *av)
+Convert::Convert(const char *av)
 {
     _inputString = std::string(av);
     _inputChar = av;
-    _f = 0;
-    _d = 0;
-    _i = 0;
-    _c = 0;
-}
-
-std::ostream &operator<<(std::ostream &o, Convert const &base)
-{
-   o << "char: " << base.getChar() << std::endl;
-   o << "int: " << base.getInt() << std::endl;
-   o << "float: " << base.getFloat() << std::endl;
-   o << "double: " << base.getDouble();
-    return (o);
 }
 
 Convert::operator char() const
 {
-    if ((_inputString == "-inf") || (_inputString == "-inff") || (_inputString ==  "inf") || (_inputString == "inff"))
+    if ((_inputString == "-inf") || (_inputString == "-inff") || (_inputString ==  "inf") ||
+    (_inputString == "nan") || (_inputString == "nanf"))
         throw ConversionError();
 
     char *end;
@@ -76,12 +49,22 @@ Convert::operator char() const
     {
         throw ConversionError();
     }
-    return static_cast<int>(x);
+	try
+	{
+		if (x > std::numeric_limits<char>::max() || x < std::numeric_limits<char>::min())
+			throw OverflowError();
+	}
+	catch(const std::exception& e)
+	{
+		throw OverflowError();
+	}
+    return static_cast<char>(x);
 }
 
 Convert::operator int() const
 {
-    if ((_inputString == "-inf") || (_inputString == "-inff") || (_inputString ==  "inf") || (_inputString == "inff"))
+	if ((_inputString == "-inf") || (_inputString == "-inff") || (_inputString ==  "inf") ||
+		(_inputString == "nan") || (_inputString == "nanf"))
         throw ConversionError();
 
     char *end;
@@ -90,9 +73,9 @@ Convert::operator int() const
 
     try
     {
-        if((x = std::strtod(_inputChar, &end)) == 0)
+    	if((x = std::strtod(_inputChar, &end)) == 0)
         {
-            int i = 0;
+    		int i = 0;
             while(_inputChar[i] && !fail)
             {
                 if (isdigit(_inputChar[i]))
@@ -115,34 +98,45 @@ Convert::operator int() const
     {
         throw ConversionError();
     }
+    try
+	{
+		if (x > std::numeric_limits<int>::max() || x < std::numeric_limits<int>::min())
+			throw OverflowError();
+	}
+	catch(const std::exception& e)
+	{
+		throw OverflowError();
+	}
     return static_cast<int>(x);
 }
 
 Convert::operator double() const
 {
-    double x = 0.0;
+    double x;
     char *end;
+    bool fail = false;
+
     try
     {
-        if((x = std::strtod(this->_data, &end)) == 0)
+        if((x = std::strtod(_inputChar, &end)) == 0)
         {
-            int x = 0;
-            int others = 0;
-            while(this->_data[x])
-            {
-                if (this->_data[x] >= '1' && this->_data[x] <= '9')
-                    others++;
-                x++;
-            }
+            int i = 0;
+			while(_inputChar[i] && !fail)
+			{
+				if (isdigit(_inputChar[i]))
+					i++;
+				else
+					fail = true;
+			}
 
-            if (x == 1 || others == 0)
-            {
-                if (this->_data[0] == '0')
-                    return static_cast<double>(0);
-                return static_cast<double>(this->_data[0]);
-            }
-            else
-                throw ConversionError();
+			if (i == 1 || !fail)
+			{
+				if (_inputChar[0] == '0')
+					return static_cast<double>(0);
+				return static_cast<double>(_inputChar[0]);
+			}
+			else
+				throw ConversionError();
         }
     }
     catch(const std::exception& e)
@@ -154,40 +148,47 @@ Convert::operator double() const
 
 Convert::operator float() const
 {
-    double x = 0.0;
+    double x;
     char *end;
+    bool fail = false;
+
     try
     {
-        if((x = std::strtod(this->_data, &end)) == 0)
-        {
-            int x = 0;
-            int others = 0;
-            while(this->_data[x])
-            {
-                if (this->_data[x] >= '1' && this->_data[x] <= '9')
-                    others++;
-                x++;
-            }
+		if((x = std::strtod(_inputChar, &end)) == 0)
+		{
+			int i = 0;
+			while(_inputChar[i] && !fail)
+			{
+				if (isdigit(_inputChar[i]))
+					i++;
+				else
+					fail = true;
+			}
 
-            if (x == 1 || others == 0)
-            {
-                if (this->_data[0] == '0')
-                    return static_cast<float>(0);
-                return static_cast<float>(this->_data[0]);
-            }
-            else
-                throw ConversionError();
-        }
-    }
-    catch(const std::exception& e)
-    {
-        throw ConversionError();
-    }
-    return static_cast<float>(x);
+			if (i == 1 || !fail)
+			{
+				if (_inputChar[0] == '0')
+					return static_cast<float>(0);
+				return static_cast<float>(_inputChar[0]);
+			}
+			else
+				throw ConversionError();
+		}
+	}
+	catch(const std::exception& e)
+	{
+		throw ConversionError();
+	}
+	return static_cast<float>(x);
 }
 
 const char *Convert::ConversionError::what() const throw()
 {
-    return ("Impossible");
+    return ("impossible");
+}
+
+const char *Convert::OverflowError::what() const throw()
+{
+	return ("overflow");
 }
 

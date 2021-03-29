@@ -1,10 +1,10 @@
-NAME = convert
+NAME = iter
 
 CC = clang++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = Convert.cpp main.cpp
+SRC = main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

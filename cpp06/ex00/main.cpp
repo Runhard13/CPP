@@ -1,36 +1,31 @@
 #include "Convert.hpp"
 
-int main(int argc, char const *argv[])
+int main(int ac, const char **av)
 {
-    if (argc < 2)
+    if (ac != 2)
     {
-        std::cout << "Need something to convert." << std::endl;
-        return 0;
-    }
-    if (argc > 2)
-    {
-        std::cout << "One conversion at a time please." << std::endl;
-        return 0;
+        std::cout << "Invalid arguments count" << std::endl;
+        return 1;
     }
 
-    std::cout << argv[0] << std::endl;
-    Conversion convert(argv[1]);
+	std:: cout << std::fixed << std::setprecision(1);
+    Convert convert(av[1]);
 
     try
     {
         int cast;
 
-        std::cout << "Char: ";
+        std::cout << "char: ";
         cast = static_cast<int>(convert);
 
-        if (cast >= 33 && cast <= 126)
-            std::cout << static_cast<char>(convert) << std::endl;
+        if (cast > 0 && cast < 32)
+			std::cout << "Non Displayable" << std::endl;
         else
-            std::cout << "Non Displayable" << std::endl;
+			std::cout << static_cast<char>(convert) << std::endl;
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
 
     try
@@ -38,12 +33,12 @@ int main(int argc, char const *argv[])
         int cast;
 
         std::cout << "int: ";
-        cast = static_cast<int>(convert);
-        std::cout << cast << std::endl;
+		cast = static_cast<int>(convert);
+		std::cout << cast << std::endl;
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
 
     try
@@ -52,11 +47,11 @@ int main(int argc, char const *argv[])
 
         std::cout << "float: ";
         cast = static_cast<float>(convert);
-        std::cout << cast << std::endl;
+		std:: cout << std::fixed << std::setprecision(1) << (cast) << "f" << std::endl;
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
 
     try
@@ -69,7 +64,7 @@ int main(int argc, char const *argv[])
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
 
     return 0;
